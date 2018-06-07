@@ -1,0 +1,36 @@
+footer{
+    background-color: rgb(3, 3, 3);
+    height: 100%;
+}
+
+footer h1{
+    color: rgb(185, 224, 11);
+    font-size: 1.0em;
+}
+
+footer div.col a{
+    font-size: 0.9em;
+    color: rgb(129, 129, 129);
+    text-decoration: none;
+}
+
+footer div.col a:hover{
+    color: rgb(161, 161, 161);
+}
+
+footer div.col{
+    text-align: center;
+}
+
+footer ul{
+    list-style: none;
+}
+
+footer div.container p{
+    padding: 10px;
+    margin-top: 10px;
+}
+
+footer div.container article{
+    margin-top: 25px;
+}
