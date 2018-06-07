@@ -6,9 +6,23 @@ header > div{
     background-color: rgb(10, 10, 10);
 }
 
-main div > article h1{
+/* main div > article h1{
     font-size: 1.1em;
     font-weight: 400;
+} */
+
+main div.container .card .card-title{
+    font-size: 1.25em;
+}
+
+main div.container .card .card-text{
+    font-size: 0.9em;
+}
+
+main div.container .card .card-text > div div{
+    background-color: black;
+    width: 12px;
+    height: 12px;
 }
 
 main > section{
@@ -26,3 +40,4 @@ main > section p{
 .text-dark:hover{
     text-decoration: none;
 }
+
