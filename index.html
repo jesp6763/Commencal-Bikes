@@ -11,6 +11,11 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="css/shared-style.css">
     <link rel="stylesheet" href="css/home-style.css">
+    <script src="js/Model/Bike.js"></script>
+    <script src="js/View/Bikes.js"></script>
+    <script>
+        window.addEventListener( "load", Bikes.SetupUserInterface);
+    </script>
 </head>
 
 <body>
@@ -73,25 +78,45 @@
     </section>
 
     <main>
-        <div class="container mt-3 text-uppercase text-center">
+        <div class="container mt-3">
             <div class="row mt-4">
                 <div class="col-lg-3">
-                    <div class="card">
-                        <img class="card-img-top" src="img/Kids.jpg" alt="">
-                        <div class="card-body text-left">
-                            <h4 class="card-title font-weight-normal">Kids Bike</h4>
-                            <hr>
-                            <div class="card-text">
-                                <p>Price: $299</p>
-                                <div class="d-flex flex-row">
-                                    <p>Colors:</p>
-                                    <div class="align-middle"></div>
+                    <template id="bicycle-product">
+                        <div class="card">
+                            <img class="card-img-top" src="img/Kids.jpg" alt="">
+                            <div class="card-body text-left">
+                                <h4 class="card-title font-weight-normal text-uppercase">Kids Bike</h4>
+                                <hr class="mb-1">
+                                <div class="card-text">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <p class="m-0 mb-1 p-0">Price:</p>
+                                        </div>
+
+                                        <div class="col-sm-6 text-right">
+                                            <p class=" bike-price">$299</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <p class="m-0 p-0">Colors:</p>
+                                        </div>
+
+                                        <div class="col-sm-6 text-right">
+                                            <button type="button" class="btn mr-1 bg-dark align-self-center bike-color"></button>
+                                            <button type="button" class="btn bg-primary align-self-center bike-color"></button>
+                                        </div>
+                                    </div>
                                 </div>
+                                <hr class="mt-2 mb-3">
+                                <button type="button" class="btn bg-primary text-light d-block mx-auto" data-toggle="modal" data-target="#bicycleSpecsModal">See specs</button>
                             </div>
                         </div>
-                    </div>
+                    </template>
                 </div>
             </div>
+
             <!-- <div class="row mt-4">
                 <div class="col-lg-3 col-md-6">
                     <article>
@@ -260,6 +285,84 @@
             </p>
         </div>
     </footer>
+
+    <!-- Modals -->
+    <div class="modal fade" id="bicycleSpecsModal" tabindex="-1" role="dialog" aria-labelledby="bicycle-product-title" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="bicycle-product-title">Kids Bike</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Frame -->
+                    <p class="font-weight-bold spec-title">Frame</p>
+                    <p class="spec-description ml-2">Pure Fix Urban Frame
+                        <br> High Tensile Steel (Tig-welded)
+                    </p>
+
+                    <!-- Fork -->
+                    <p class="font-weight-bold spec-title">Fork</p>
+                    <p class="spec-description ml-2">Pure Fix Straight Fork
+                        <br> High Tensile Steel (Tig-welded)
+                    </p>
+
+                    <!-- Headset -->
+                    <p class="font-weight-bold spec-title">Headset</p>
+                    <p class="spec-description ml-2">Thread-less headset
+                        <br> Alloy &amp; Steel
+                    </p>
+
+                    <!-- Handlebars -->
+                    <p class="font-weight-bold spec-title">Handlebars</p>
+                    <p class="spec-description ml-2">Alloy Risers
+                    </p>
+
+                    <!-- Stem -->
+                    <p class="font-weight-bold spec-title">Stem</p>
+                    <p class="spec-description ml-2">Promax Four Screw Alloy
+                    </p>
+
+                    <!-- Grips -->
+                    <p class="font-weight-bold spec-title">Grips</p>
+                    <p class="spec-description ml-2">Oury Grips (Made in the USA)
+                    </p>
+
+                    <!-- Saddle -->
+                    <p class="font-weight-bold spec-title">Saddle</p>
+                    <p class="spec-description ml-2">Pure Fix Urban Saddle
+                    </p>
+
+                    <!-- Brakes -->
+                    <p class="font-weight-bold spec-title">Brakes</p>
+                    <p class="spec-description ml-2">Alloy Front Brake
+                    </p>
+
+                    <!-- Crankset -->
+                    <p class="font-weight-bold spec-title">Crankset</p>
+                    <p class="spec-description ml-2">3-Piece Alloy (Black &amp; Silver)
+                    </p>
+
+                    <!-- Pedals -->
+                    <p class="font-weight-bold spec-title">Pedals</p>
+                    <p class="spec-description ml-2">Pure Fix Platform Pedals
+                    </p>
+
+                    <!-- Handlebars -->
+                    <p class="font-weight-bold spec-title">Handlebars</p>
+                    <p class="spec-description ml-2">Alloy Risers
+                    </p>
+
+                    <!-- Handlebars -->
+                    <p class="font-weight-bold spec-title">Handlebars</p>
+                    <p class="spec-description ml-2">Alloy Risers
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Script includes -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

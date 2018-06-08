@@ -19,12 +19,6 @@ main div.container .card .card-text{
     font-size: 0.9em;
 }
 
-main div.container .card .card-text > div div{
-    background-color: black;
-    width: 12px;
-    height: 12px;
-}
-
 main > section{
     background-color: rgb(231, 231, 231);
 }
@@ -41,3 +35,11 @@ main > section p{
     text-decoration: none;
 }
 
+.spec-title{
+    font-size: 1.2em;
+    line-height: 0.2;
+}
+
+.spec-description{
+    color: rgb(160, 160, 160);
+}
