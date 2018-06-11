@@ -63,10 +63,10 @@ class Bike {
     }
 
     static CreateTestData() {
-        Bike.Instances["Kids Baik"] = new Bike("Kids Baik", 'img/Kids.jpg', 399, ['#FF29FF', '#FF0077'], {frame: {title: 'Frame', description: 'Some frame.'}});
-        Bike.Instances["Speed Demon"] = new Bike("Speed Demon", 'img/Downhill.jpg', 999, ['#CCC'], {frame: {title: 'Frame', description: 'Very good frame.'}});
-        Bike.Instances["Blazing Speedster"] = new Bike("Blazing Speedster", 'img/Enduro hardtail.jpg', 10000, ['#CCC'], {});
-        Bike.Instances["Street Stitcher"] = new Bike("Street Stitcher", 'img/Street.jpg', 20000, ['#CCC'], {});
+        Bike.Instances["Kids Baik"] = new Bike("Kids Baik", 'img/Kids.jpg', 399, ['#CCC', '#FF29FF', '#FF0077'], {frame: {title: 'Frame', description: 'Some frame.'}});
+        Bike.Instances["Speed Demon"] = new Bike("Speed Demon", 'img/Downhill.jpg', 999, ['#CCC', '#00FFFF'], {frame: {title: 'Frame', description: 'Very good frame.'}});
+        Bike.Instances["Blazing Speedster"] = new Bike("Blazing Speedster", 'img/Enduro hardtail.jpg', 10000, ['#CCC', '#F6FF00'], {});
+        Bike.Instances["Street Stitcher"] = new Bike("Street Stitcher", 'img/Street.jpg', 20000, ['#CCC', '#00FF89'], {});
     }
 }
 
