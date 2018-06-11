@@ -25,7 +25,11 @@ class Bikes {
         Bikes.Modal = {
             element: modalElement,
             title: modalElement.querySelector('#bicycle-product-title'),
-            content: modalElement.getElementsByClassName('modal-body')[0]
+            thumbnail: modalElement.querySelector('.bike-modal-thumbnail'),
+            price: modalElement.querySelector('.bike-modal-price'),
+            colorList: modalElement.querySelector('.bike-modal-colorlist'),
+            content: modalElement.querySelector('.modal-body'),
+            specList: modalElement.querySelector('.bike-modal-speclist')
         };
 
         // TODO: Remove the line below when done testing.
@@ -74,12 +78,13 @@ class Bikes {
      * @param {Node} parent The node the colors should be appended to
      */
     static _CreateBikeColors(colors, parent){
+        // Get template
+        let bikeColorTemplate = parent.querySelector('#bike-color');
+        console.log(bikeColorTemplate);
+
         for (let i = 0; i < colors.length; i++) {
             const colorHex = colors[i];
             
-            // Get template
-            let bikeColorTemplate = parent.querySelector('#bike-color');
-    
             // Import node
             let templateClone = document.importNode(bikeColorTemplate.content, true);
 
@@ -98,19 +103,22 @@ class Bikes {
      */
     static RefreshSpecsModal(bike) {
         Bikes.Modal.title.innerHTML = bike.Name;
+        Bikes.Modal.price.innerHTML = bike.Price;
+
+        // this._CreateBikeColors(bike.Colors, Bikes.Modal.colorList);
         
         let bikeSpecKeys = Object.keys(bike.Specs);
         let bikeSpecsHtml = '';
         for (let i = 0; i < bikeSpecKeys.length; i++) {
             const key = bikeSpecKeys[i];
-            bikeSpecsHtml = '<p class="font-weight-bold spec-title">'.concat(bike.Specs[key].title ,'</p><p class="spec-description ml-2">', bike.Specs[key].description ,'</p>');
+            bikeSpecsHtml = '<li><p class="font-weight-bold spec-title">'.concat(bike.Specs[key].title ,'</p><p class="spec-description ml-2">', bike.Specs[key].description ,'</p></li>');
         }
 
         if(bikeSpecKeys.length == 0){
-            Bikes.Modal.content.innerHTML = 'No description.';
+            Bikes.Modal.specList.innerHTML = 'No description.';
         }
         else{
-            Bikes.Modal.content.innerHTML = bikeSpecsHtml;
+            Bikes.Modal.specList.innerHTML = bikeSpecsHtml;
         }
     }
 }

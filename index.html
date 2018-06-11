@@ -11,8 +11,6 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="css/shared-style.css">
     <link rel="stylesheet" href="css/home-style.css">
-    <script src="js/Model/Bike.js"></script>
-    <script src="js/View/Bikes.js"></script>
 </head>
 
 <body>
@@ -109,7 +107,9 @@
                                         </div>
 
                                         <div class="col-sm-6 text-right bike-colors">
-                                            <template id="bike-color"><a href="#" class="btn mr-1 align-self-center"></a></template>
+                                            <template id="bike-color">
+                                                <a href="#" class="btn mr-1 align-self-center"></a>
+                                            </template>
                                         </div>
                                     </div>
                                 </div>
@@ -300,8 +300,34 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    <!-- All bike specifications -->
+                <div class="modal-body p-0">
+                    <div class="row">
+                        <div class="col">
+                            <img class="bike-modal-thumbnail" src="img/Kids.jpg">
+                        </div>
+
+                        <div class="col">
+                            <div class="mb-2 bike-modal-colorlist">
+                                <p class="font-weight-bold m-0">Colors</p>
+                                <!-- <a href="#" class="btn btn-dark mr-1 align-self-center"></a> -->
+                            </div>
+
+                            <div class="row mt-auto">
+                                <div class="col">
+                                    <p class="font-weight-bold">Price</p>
+                                </div>
+                                <div class="col">
+                                    <p class="bike-modal-price text-align-right">$10.0000</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4 class="m-3">Specifications</h4>
+                    <ul class="list-unstyled bike-modal-speclist m-0 p-4">
+                        <!-- All bike specifications -->
+
+                    </ul>
                 </div>
             </div>
         </div>
@@ -314,6 +340,8 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
         crossorigin="anonymous"></script>
+    <script src="js/Model/Bike.js"></script>
+    <script src="js/View/Bikes.js"></script>
     <script>
         window.addEventListener("load", Bikes.SetupUserInterface);
     </script>

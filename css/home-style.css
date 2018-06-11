@@ -43,3 +43,12 @@ main > section p{
 .spec-description{
     color: rgb(160, 160, 160);
 }
+
+.bike-modal-speclist{
+    background-color: rgb(247, 247, 247);
+    box-shadow: 0 -3px 12px -4px #000;
+}
+
+.modal-body > .row > .col p{
+    font-size: 1.2em;
+}
