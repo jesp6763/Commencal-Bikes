@@ -28,7 +28,8 @@ class Bikes {
             content: modalElement.getElementsByClassName('modal-body')[0]
         };
 
-        Bike.Instances["Kids Baik"] = new Bike("Kids Baik", 399, [], {});
+        // TODO: Remove the line below when done testing.
+        Bike.CreateTestData();
 
         Bikes.PopulateWithProducts();
     }
@@ -38,29 +39,56 @@ class Bikes {
     */
     static PopulateWithProducts() {
         let bikeInstanceKeys = Object.keys(Bike.Instances);
-        
+
         for (let i = 0; i < bikeInstanceKeys.length; i++) {
             const bike = Bike.Instances[bikeInstanceKeys[i]];
 
             let productClone = document.importNode(Bikes.Template.content, true);
-            let seeSpecsButton = productClone.querySelector('button');
 
             let productData = {
                 title: productClone.querySelector('.card-title'),
+                thumbnail: productClone.querySelector('img'),
                 price: productClone.querySelector('.bike-price'),
-                colors: productClone.querySelector('.bike-color'),
-                seeSpecsBtn: seeSpecsButton
+                colorsParent: productClone.querySelector('.bike-colors'),
+                seeSpecsBtn: productClone.querySelector('button')
             }
 
             productData.title.innerHTML = bike.Name;
-            productData.price.innerHTML = "$".concat(bike.Price);
+            productData.thumbnail.setAttribute('src', bike.ThumbnailUrl);
+            productData.price.innerHTML = bike.Price.toString().concat(" DKK");
+            
+            // Create bike colors
+            this._CreateBikeColors(bike.Colors, productData.colorsParent);
 
             productData.seeSpecsBtn.addEventListener('click', function(){
-                this.RefreshSpecsModal(bike);
-                console.log("wdla");
+                Bikes.RefreshSpecsModal(bike);
             });
 
             document.querySelector('.products-list').appendChild(productClone);
+        }
+    }
+
+    /**
+     * Appends available colors to the specified node.
+     * @param {string[]} colors A string array of colors in HEX format.
+     * @param {Node} parent The node the colors should be appended to
+     */
+    static _CreateBikeColors(colors, parent){
+        for (let i = 0; i < colors.length; i++) {
+            const colorHex = colors[i];
+            
+            // Get template
+            let bikeColorTemplate = parent.querySelector('#bike-color');
+    
+            // Import node
+            let templateClone = document.importNode(bikeColorTemplate.content, true);
+
+            // Append colors to specified node.
+            parent.appendChild(templateClone);
+            
+            // Set color of the element
+            let bikeColors = parent.querySelectorAll('a');
+            bikeColors[bikeColors.length - 1].style.backgroundColor = colorHex;
         }
     }
 
@@ -69,19 +97,20 @@ class Bikes {
      * @param {Bike} bike The instance of the bike.
      */
     static RefreshSpecsModal(bike) {
-        // let bikeSpecKeys = Object.keys(bike.Specs);
+        Bikes.Modal.title.innerHTML = bike.Name;
+        
+        let bikeSpecKeys = Object.keys(bike.Specs);
+        let bikeSpecsHtml = '';
+        for (let i = 0; i < bikeSpecKeys.length; i++) {
+            const key = bikeSpecKeys[i];
+            bikeSpecsHtml = '<p class="font-weight-bold spec-title">'.concat(bike.Specs[key].title ,'</p><p class="spec-description ml-2">', bike.Specs[key].description ,'</p>');
+        }
 
-        // for (let i = 0; i < bikeSpecKeys.length; i++) {
-        //     const element = bikeSpecKeys[i];
-
-        // }
-
-        Modal.title.innerHTML = bike.Name;
-
-        Modal.content.innerHTML = `
-        <p class="font-weight-bold spec-title">Frame</p>
-        <p class="spec-description ml-2">Pure Fix Urban Frame
-            <br>High Tensile Steel (Tig-welded)
-        </p>`;
+        if(bikeSpecKeys.length == 0){
+            Bikes.Modal.content.innerHTML = 'No description.';
+        }
+        else{
+            Bikes.Modal.content.innerHTML = bikeSpecsHtml;
+        }
     }
 }

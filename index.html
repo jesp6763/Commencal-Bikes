@@ -76,15 +76,23 @@
 
     <main>
         <div class="container mt-3">
-            <div class="row mt-4">
-                <div class="col-lg-3 products-list">
-                    <template id="bicycle-product">
+            <div class="row mt-4 products-list">
+                <template id="bicycle-product">
+                    <div class="col-lg-3">
                         <div class="card">
                             <img class="card-img-top" src="img/Kids.jpg" alt="">
                             <div class="card-body text-left">
                                 <h4 class="card-title font-weight-normal text-uppercase">Kids Bike</h4>
                                 <hr class="mb-1">
                                 <div class="card-text">
+                                    <!-- <table>
+                                        <tbody>
+                                            <tr>
+                                                <td>Price:</td>
+                                                <td>9999 DKK</td>
+                                            </tr>
+                                        </tbody>
+                                    </table> -->
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <p class="m-0 mb-1 p-0">Price:</p>
@@ -100,9 +108,8 @@
                                             <p class="m-0 p-0">Colors:</p>
                                         </div>
 
-                                        <div class="col-sm-6 text-right">
-                                            <button type="button" class="btn mr-1 bg-dark align-self-center bike-color"></button>
-                                            <button type="button" class="btn bg-primary align-self-center bike-color"></button>
+                                        <div class="col-sm-6 text-right bike-colors">
+                                            <template id="bike-color"><a href="#" class="btn mr-1 align-self-center"></a></template>
                                         </div>
                                     </div>
                                 </div>
@@ -110,8 +117,8 @@
                                 <button type="button" class="btn bg-primary text-light d-block mx-auto" data-toggle="modal" data-target="#bicycleSpecsModal">See specs</button>
                             </div>
                         </div>
-                    </template>
-                </div>
+                    </div>
+                </template>
             </div>
 
             <!-- <div class="row mt-4">
@@ -294,68 +301,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <!-- Frame -->
-                    <p class="font-weight-bold spec-title">Frame</p>
-                    <p class="spec-description ml-2">Pure Fix Urban Frame
-                        <br> High Tensile Steel (Tig-welded)
-                    </p>
-
-                    <!-- Fork -->
-                    <p class="font-weight-bold spec-title">Fork</p>
-                    <p class="spec-description ml-2">Pure Fix Straight Fork
-                        <br> High Tensile Steel (Tig-welded)
-                    </p>
-
-                    <!-- Headset -->
-                    <p class="font-weight-bold spec-title">Headset</p>
-                    <p class="spec-description ml-2">Thread-less headset
-                        <br> Alloy &amp; Steel
-                    </p>
-
-                    <!-- Handlebars -->
-                    <p class="font-weight-bold spec-title">Handlebars</p>
-                    <p class="spec-description ml-2">Alloy Risers
-                    </p>
-
-                    <!-- Stem -->
-                    <p class="font-weight-bold spec-title">Stem</p>
-                    <p class="spec-description ml-2">Promax Four Screw Alloy
-                    </p>
-
-                    <!-- Grips -->
-                    <p class="font-weight-bold spec-title">Grips</p>
-                    <p class="spec-description ml-2">Oury Grips (Made in the USA)
-                    </p>
-
-                    <!-- Saddle -->
-                    <p class="font-weight-bold spec-title">Saddle</p>
-                    <p class="spec-description ml-2">Pure Fix Urban Saddle
-                    </p>
-
-                    <!-- Brakes -->
-                    <p class="font-weight-bold spec-title">Brakes</p>
-                    <p class="spec-description ml-2">Alloy Front Brake
-                    </p>
-
-                    <!-- Crankset -->
-                    <p class="font-weight-bold spec-title">Crankset</p>
-                    <p class="spec-description ml-2">3-Piece Alloy (Black &amp; Silver)
-                    </p>
-
-                    <!-- Pedals -->
-                    <p class="font-weight-bold spec-title">Pedals</p>
-                    <p class="spec-description ml-2">Pure Fix Platform Pedals
-                    </p>
-
-                    <!-- Handlebars -->
-                    <p class="font-weight-bold spec-title">Handlebars</p>
-                    <p class="spec-description ml-2">Alloy Risers
-                    </p>
-
-                    <!-- Handlebars -->
-                    <p class="font-weight-bold spec-title">Handlebars</p>
-                    <p class="spec-description ml-2">Alloy Risers
-                    </p>
+                    <!-- All bike specifications -->
                 </div>
             </div>
         </div>
