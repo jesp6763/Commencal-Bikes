@@ -13,9 +13,6 @@
     <link rel="stylesheet" href="css/home-style.css">
     <script src="js/Model/Bike.js"></script>
     <script src="js/View/Bikes.js"></script>
-    <script>
-        window.addEventListener( "load", Bikes.SetupUserInterface);
-    </script>
 </head>
 
 <body>
@@ -80,7 +77,7 @@
     <main>
         <div class="container mt-3">
             <div class="row mt-4">
-                <div class="col-lg-3">
+                <div class="col-lg-3 products-list">
                     <template id="bicycle-product">
                         <div class="card">
                             <img class="card-img-top" src="img/Kids.jpg" alt="">
@@ -371,6 +368,9 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
         crossorigin="anonymous"></script>
+    <script>
+        window.addEventListener("load", Bikes.SetupUserInterface);
+    </script>
 </body>
 
 </html>
