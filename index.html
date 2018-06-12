@@ -16,9 +16,11 @@
 <body>
     <header>
         <div class="text-center">
-            <a href="#">
-                <img class="py-2" src="img/logo.png" width="180px">
-            </a>
+            <h1 class="m-0">
+                <a href="#">
+                    <img class="py-2" src="img/logo.png" width="180px" alt="Commencal Bikes">
+                </a>
+            </h1>
         </div>
 
         <nav class="navbar navbar-expand-md text-uppercase navbar-light">
@@ -76,21 +78,13 @@
         <div class="container mt-3">
             <div class="row mt-4 products-list">
                 <template id="bicycle-product">
-                    <div class="col-lg-3">
+                    <div class="col-sm-12 col-md-6 col-lg-3 mb-md-4 mb-lg-0">
                         <div class="card">
                             <img class="card-img-top" src="img/Kids.jpg" alt="">
                             <div class="card-body text-left">
                                 <h4 class="card-title font-weight-normal text-uppercase">Kids Bike</h4>
                                 <hr class="mb-1">
                                 <div class="card-text">
-                                    <!-- <table>
-                                        <tbody>
-                                            <tr>
-                                                <td>Price:</td>
-                                                <td>9999 DKK</td>
-                                            </tr>
-                                        </tbody>
-                                    </table> -->
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <p class="m-0 mb-1 p-0">Price:</p>
@@ -102,11 +96,11 @@
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-sm-6">
+                                        <div class="col-sm-4">
                                             <p class="m-0 p-0">Colors:</p>
                                         </div>
 
-                                        <div class="col-sm-6 text-right bike-colors">
+                                        <div class="col-sm-8 text-right bike-colors">
                                             <template id="bike-color">
                                                 <a href="#" class="btn mr-1 align-self-center"></a>
                                             </template>
@@ -120,82 +114,6 @@
                     </div>
                 </template>
             </div>
-
-            <!-- <div class="row mt-4">
-                <div class="col-lg-3 col-md-6">
-                    <article>
-                        <a class="text-dark" href="#">
-                            <img src="img/Kids.jpg">
-                            <h1>Kids</h1>
-                        </a>
-                    </article>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <article>
-                        <a class="text-dark" href="#">
-                            <img src="img/XC hardtail.jpg">
-                            <h1>XC Hardtail</h1>
-                        </a>
-                    </article>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <article>
-                        <a class="text-dark" href="#">
-                            <img src="img/XC full suspension.jpg">
-                            <h1>XC Full suspension</h1>
-                        </a>
-                    </article>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <article>
-                        <a class="text-dark" href="#">
-                            <img src="img/Street.jpg">
-                            <h1>Street</h1>
-                        </a>
-                    </article>
-                </div>
-            </div>
-
-            <div class="row mt-2">
-                <div class="col-lg-3 col-md-6">
-                    <article>
-                        <a class="text-dark" href="#">
-                            <img src="img/Downhill.jpg">
-                            <h1>Downhill</h1>
-                        </a>
-                    </article>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <article>
-                        <a class="text-dark" href="#">
-                            <img src="img/Enduro hardtail.jpg">
-                            <h1>Enduro Hardtail</h1>
-                        </a>
-                    </article>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <article>
-                        <a class="text-dark" href="#">
-                            <img src="img/Enduro full suspension.jpg">
-                            <h1>Enduro Full Suspension</h1>
-                        </a>
-                    </article>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <article>
-                        <a class="text-dark" href="#">
-                            <img src="img/City.jpg">
-                            <h1>City</h1>
-                        </a>
-                    </article>
-                </div>
-            </div> -->
         </div>
 
         <section class="mt-4 py-4">

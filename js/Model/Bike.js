@@ -3,6 +3,21 @@
  */
 class Bike {
     /**
+     * Initializes a new instance of the Bike class.
+     * @param {string} name The name of the product
+     * @param {number} price The price of the product
+     * @param {string[]} colors The available colors
+     * @param {object} specs The specs of the bike.
+     */
+    constructor(name, thumbnailUrl, price, colors, specs) {
+        this.name = name;
+        this.thumbnailUrl = thumbnailUrl;
+        this.price = price;
+        this.colors = colors;
+        this.specs = specs;
+    }
+
+    /**
      * Gets the name of the bicycle.
      */
     get Name() {
@@ -45,21 +60,6 @@ class Bike {
 
     static set Instances(value) {
         Bike.instances = value;
-    }
-
-    /**
-     * Initializes a new instance of the Bike class.
-     * @param {string} name The name of the product
-     * @param {number} price The price of the product
-     * @param {string[]} colors The available colors
-     * @param {object} specs The specs of the bike.
-     */
-    constructor(name, thumbnailUrl, price, colors, specs) {
-        this.name = name;
-        this.thumbnailUrl = thumbnailUrl;
-        this.price = price;
-        this.colors = colors;
-        this.specs = specs;
     }
 
     static CreateTestData() {
