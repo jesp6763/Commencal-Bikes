@@ -59,7 +59,7 @@ class Bikes {
 
             productData.title.innerHTML = bike.Name;
             productData.thumbnail.setAttribute('src', bike.ThumbnailUrl);
-            productData.price.innerHTML = bike.Price.toString().concat(" DKK");
+            productData.price.innerHTML = '$'.concat(bike.Price.toString());
             
             // Create bike colors
             this._CreateBikeColors(bike.Colors, productData.colorsParent);

@@ -85,27 +85,23 @@
                                 <h4 class="card-title font-weight-normal text-uppercase">Kids Bike</h4>
                                 <hr class="mb-1">
                                 <div class="card-text">
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <p class="m-0 mb-1 p-0">Price:</p>
-                                        </div>
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td class="w-100">Price:</td>
+                                                <td class="bike-price text-right">$299</td>
+                                            </tr>
 
-                                        <div class="col-sm-6 text-right">
-                                            <p class=" bike-price">$299</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-sm-4">
-                                            <p class="m-0 p-0">Colors:</p>
-                                        </div>
-
-                                        <div class="col-sm-8 text-right bike-colors">
-                                            <template id="bike-color">
-                                                <a href="#" class="btn mr-1 align-self-center"></a>
-                                            </template>
-                                        </div>
-                                    </div>
+                                            <tr>
+                                                <td>Colors:</td>
+                                                <td class="bike-colors d-inline-flex">
+                                                    <template id="bike-color">
+                                                        <a href="#" class="btn mr-1 align-self-center"></a>
+                                                    </template>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                                 <hr class="mt-2 mb-3">
                                 <button type="button" class="btn bg-primary text-light d-block mx-auto" data-toggle="modal" data-target="#bicycleSpecsModal">See specs</button>
